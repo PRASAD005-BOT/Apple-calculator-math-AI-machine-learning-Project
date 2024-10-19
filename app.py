@@ -75,5 +75,4 @@ def index():
 def send_template_file(filename):
     return send_from_directory('templates', filename)
 
-if __name__ == "__main__":
-    app.run(debug=True)
+
