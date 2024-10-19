@@ -1,0 +1,14 @@
+version: 1
+services:
+  - type: web
+    name: my-flask-app  # Replace with your service name
+    env: python
+    buildCommand: |
+      pip install -r requirements.txt
+    startCommand: |
+      gunicorn app:app --bind 0.0.0.0:$PORT
+    envVars:
+      - key: GOOGLE_API_KEY
+        fromSecret: googleApiKey  # Assuming you've set a secret in Render
+    autoDeploy: true
+

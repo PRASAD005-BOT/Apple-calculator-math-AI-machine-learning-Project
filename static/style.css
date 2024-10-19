@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex; /* Use flexbox for layout */
+    height: 100vh; /* Full height for the body */
+}
+
+.container {
+    display: flex; /* Flexbox for the container */
+    flex-direction: column; /* Stack items vertically */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+}
+
+.nav {
+    height: 30px; /* Fixed height for the sidebar */
+    width: 100%; /* Full width for the sidebar */
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space items evenly */
+    background: linear-gradient(to right, #4568DC, #B06AB3);
+    padding: 10px;
+    border-radius: 0 10px 10px 0; /* Rounded corners on the right */
+    border: 3px solid white;
+}
+
+.canvas-container {
+    flex-grow: 1; /* Allow this to take the remaining space */
+    display: flex; /* Use flexbox for the canvas and result side by side */
+    height: 100%; /* Full height for the canvas container */
+    border-top: 3px solid white; /* Optional top border */
+}
+
+#canvas {
+    flex: 0 0 50%; /* Set canvas to 50% width */
+    border: 2px dashed teal;
+    background-color: white; /* Add scrollbar when content overflows */
+    height: 100%; /* Ensure it takes the full height of the parent container */
+}
+
+
+.result {
+    flex: 0 0 50%; /* Set result area to 50% width */
+    background-color: #fff; /* Result display background color */
+    padding: 10px;
+    border-left: 3px solid white; /* Left border to separate from canvas */
+    margin-left: 10px; /* Optional spacing between canvas and results */
+    overflow-y: auto; /* Allow scrolling for content */
+}
+
+.clr {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    border: 3px solid white;
+    transition: transform .5s;
+}
+
+.clr:hover {
+    transform: scale(1.2);
+}
+
+.clr:nth-child(1) { background-color: #000; }
+.clr:nth-child(2) { background-color: red; }
+.clr:nth-child(3) { background-color: orange; }
+.clr:nth-child(4) { background-color: blue; }
+.clr:nth-child(5) { background-color: purple; }
+.clr:nth-child(6) { background-color: yellowgreen; }
+.clr:nth-child(7) { background-color: yellow; }
+.clr:nth-child(8) { background-color: #fff; }
+
+button {
+    border: none;
+    outline: none;
+    padding: .6em 1em;
+    border-radius: 3px;
+    background-color: #03bb56;
+    color: #fff;
+    border: 3px solid white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.save {
+    background-color: #0f65d4;
+}
+
+input[type="color"] {
+    width: 60px;
+    height: 40px;
+}
+
+#ageOutputId {
+    color: white;
+    font-weight: bold;
+    font-size: 15pt;
+}
+
+#ageInputId {
+    writing-mode: bt-lr; /* This will rotate the range slider vertically */
+    height: 200px; /* Increase the height for vertical appearance */
+    outline: none;
+    /* Apply vertical slider appearance */
+    cursor: ns-resize; /* Change cursor to indicate vertical resizing */
+    border-radius: 5px;
+    border: 3px solid white;
+    accent-color: white; /* Use for modern browsers */
+}
+
+/* Optional: Style the thumb and track */
+#ageInputId::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default thumb appearance */
+    width: 20px; /* Thumb width */
+    height: 20px; /* Thumb height */
+    background: #0f65d4; /* Thumb color */
+    border-radius: 50%; /* Rounded thumb */
+}
+
+#ageInputId::-webkit-slider-runnable-track {
+    width: 10px; /* Track width */
+    background: #ccc; /* Track color */
+    border-radius: 5px; /* Rounded track */
+}
+
+.emoji {
+    font-size: 40px;
+    padding-bottom: 10px;
+}
+
+/* New styles for the result container and question area */
+.question-container {
+    margin: 20px 0; /* Spacing around question input */
+}
+
+.question-input {
+    width: 100%; /* Full width for input */
+    padding: 10px; /* Padding for comfort */
+    border: 2px solid teal; /* Teal border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+}
+
+.question-button {
+    margin-top: 10px; /* Spacing above button */
+    background-color: #0f65d4; /* Button color */
+    color: white; /* Text color */
+    cursor: pointer; /* Pointer on hover */
+}
