@@ -20,17 +20,22 @@ A Flask web application that leverages Google’s Gemini model to process matrix
 - `dotenv` for environment variable management
 - `Werkzeug` for handling file security
 
-- Install required packages:
+Install required packages:
 
+bash
+Copy code
 pip install -r requirements.txt
 Set up environment variables:
 
 Create a .env file in the root directory.
 Add your Google API Key:
 plaintext
+Copy code
 GOOGLE_API_KEY=your_api_key_here
 Run the application:
 
+bash
+Copy code
 python app.py
 Access the application in your browser at http://127.0.0.1:5000.
 
@@ -56,6 +61,4 @@ This project is licensed under the MIT License. All rights are reserved by Prasa
 If you find this project useful, please give it a star! ⭐
 
 This project was developed using Flask, Python, and Google Generative AI.
-
-
 
