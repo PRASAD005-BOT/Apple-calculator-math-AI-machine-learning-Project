@@ -20,3 +20,42 @@ A Flask web application that leverages Google’s Gemini model to process matrix
 - `dotenv` for environment variable management
 - `Werkzeug` for handling file security
 
+- Install required packages:
+
+pip install -r requirements.txt
+Set up environment variables:
+
+Create a .env file in the root directory.
+Add your Google API Key:
+plaintext
+GOOGLE_API_KEY=your_api_key_here
+Run the application:
+
+python app.py
+Access the application in your browser at http://127.0.0.1:5000.
+
+Usage
+Navigate to the homepage.
+Upload a matrix image in the designated form.
+Submit the image, and the model will process the matrix problem, returning a solution with a detailed explanation.
+🔗 Links
+Live Website: Gemini Matrix Solver
+Demo Video: YouTube
+📂 File Structure
+plaintext
+Copy code
+├── app.py                # Main Flask application
+├── templates/
+│   └── index.html        # Homepage HTML file
+├── static/               # Folder for uploaded images
+└── README.md             # Project documentation
+📝 License
+This project is licensed under the MIT License. All rights are reserved by PrasadEngineer.
+
+🌟 Support
+If you find this project useful, please give it a star! ⭐
+
+This project was developed using Flask, Python, and Google Generative AI.
+
+
+
