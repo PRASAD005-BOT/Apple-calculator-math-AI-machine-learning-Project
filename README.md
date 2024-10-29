@@ -1,3 +1,7 @@
+## 🔗 Links
+
+- **Live Website**: [Gemini Matrix Solver](https://calci-2.onrender.com)
+- **Demo Video**: [YouTube](https://youtu.be/knxGizrF7Ic?si=504Injb90BfaU8UR)
 🌟 Gemini Matrix Solver
 
 A Flask web application that leverages Google’s Gemini model to process matrix images and provide detailed solutions. Users can upload images of matrix problems, and the application will return a detailed solution and explanation.
@@ -47,10 +51,7 @@ A Flask web application that leverages Google’s Gemini model to process matrix
 2. **Upload a matrix image** in the designated form.
 3. **Submit the image**, and the model will process the matrix problem, returning a solution with a detailed explanation.
 
-## 🔗 Links
 
-- **Live Website**: [Gemini Matrix Solver](https://calci-2.onrender.com)
-- **Demo Video**: [YouTube](https://youtu.be/knxGizrF7Ic?si=504Injb90BfaU8UR)
 
 ## 📂 File Structure
 
