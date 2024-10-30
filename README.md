@@ -65,7 +65,7 @@ A Flask web application that leverages Google’s Gemini model to process matrix
 
 ## 📝 License
 
-This project is licensed under the [MIT License](LICENSE). All rights are reserved by **PrasadEngineer**.
+All rights are reserved by **PrasadEngineer**.
 
 ## 🌟 Support
 
