@@ -2,7 +2,7 @@ const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
 canvas.width = window.innerWidth / 2; // Set width to half of the window
-canvas.height = window.innerHeight - 100; // Set height to full window height minus some padding
+canvas.height = window.innerHeight; // Set height to full window height
 
 let drawing = false;
 let currentColor = "#000";
@@ -74,12 +74,6 @@ colorDivs.forEach(div => {
     div.addEventListener('click', () => {
         currentColor = div.getAttribute('data-clr');
     });
-});
-
-// Change brush thickness
-document.getElementById('brushThickness').addEventListener('input', (event) => {
-    brushThickness = event.target.value;
-    document.querySelector('output').value = brushThickness;
 });
 
 // Save button functionality
