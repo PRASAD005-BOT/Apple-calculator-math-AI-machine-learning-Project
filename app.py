@@ -43,7 +43,7 @@ def gemini():
         try:
             sample_file = genai.upload_file(
                 path=file_path,
-                display_name="Maths Question,give information for text given"
+                display_name="Maths Question or Coding Question, give information for text given"
             )
             
             # Get the uploaded file
@@ -56,7 +56,7 @@ def gemini():
             response = model.generate_content(
                 [
                     sample_file,
-                "In the picture, you have been provided with a matrix question/equation. Please solve it and give a numerical answer. First, write the final solution, then write the explanation. Provide a plain text response only.and if drwn any query give information upto 100 lines generate.Give detailed information for text content.",
+                    "In the picture, you have been provided with a question. If it is a coding question, please solve it and provide the code solution along with an explanation. If it is a matrix question/equation, solve it and give a numerical answer. First, write the final solution, then write the explanation. Provide a plain text response only. If drawn any query, give information up to 100 lines. Generate detailed information for text content."
                 ]
             )
             
@@ -75,4 +75,5 @@ def index():
 def send_template_file(filename):
     return send_from_directory('templates', filename)
 
-
+if __name__ == "__main__":
+    app.run(debug=True)
