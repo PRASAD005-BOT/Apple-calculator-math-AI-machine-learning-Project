@@ -3,6 +3,8 @@ import os
 import google.generativeai as genai
 from dotenv import load_dotenv
 from werkzeug.utils import secure_filename
+from pygments.lexers import guess_lexer_for_filename, get_lexer_for_filename, guess_lexer
+from pygments.util import ClassNotFound
 
 # Load environment variables
 load_dotenv()
@@ -43,7 +45,7 @@ def gemini():
         try:
             sample_file = genai.upload_file(
                 path=file_path,
-                display_name="Maths Question,give information for text given"
+                display_name="Maths Question, give information for text given"
             )
             
             # Get the uploaded file
@@ -56,7 +58,7 @@ def gemini():
             response = model.generate_content(
                 [
                     sample_file,
-                "In the picture, you have been provided with a matrix question/equation. Please solve it and give a numerical answer. First, write the final solution, then write the explanation. Provide a plain text response only.and if drwn any query give information upto 100 lines generate.Give detailed information for text content.",
+                    "In the picture, you have been provided with a matrix question/equation. Please solve it and give a numerical answer. First, write the final solution, then write the explanation. Provide a plain text response only. and if drawn any query give information up to 100 lines generate. Give detailed information for text content.",
                 ]
             )
             
@@ -66,6 +68,40 @@ def gemini():
             return f"An error occurred while processing the image: {str(e)}", 500
 
     return "No canvas image provided", 400
+
+@app.route("/detect_language", methods=["POST"])
+def detect_language():
+    if 'codeFile' in request.files:
+        code_file = request.files['codeFile']
+        
+        if code_file.filename == '':
+            return "No selected file", 400
+        
+        filename = secure_filename(code_file.filename)
+        file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        
+        try:
+            code_file.save(file_path)
+        except Exception as e:
+            return f"An error occurred while saving the file: {str(e)}", 500
+        
+        try:
+            with open(file_path, 'r') as file:
+                code = file.read()
+            
+            try:
+                lexer = guess_lexer_for_filename(filename, code)
+            except ClassNotFound:
+                lexer = guess_lexer(code)
+            
+            language = lexer.name
+            response = f"The detected programming language is: {language}"
+            return response
+        
+        except Exception as e:
+            return f"An error occurred while detecting the language: {str(e)}", 500
+
+    return "No code file provided", 400
 
 @app.route("/")
 def index():
