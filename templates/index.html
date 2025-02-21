@@ -2,42 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drawing App 🎨</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+    <Metahttp-equiv="X-UA-Compatible" content="IE=edge">
+    <Metaname="viewport" content="width=device-width, initial-scale=1.0">
+    <Title>Drawing App 🎨</Title>
+    <Linkrel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <Script src="{{ url_for(' static', filename='script.js') }}" defer></Script>
 </head>
 <body>
-    <div class="container">
-        <div class="nav">
+    <Divclass="container">
+        <Divclass="nav">
             <!-- Color selection divs -->
-            <div class="clr" data-clr="#000"></div>
-            <div class="clr" data-clr="red"></div>
-            <div class="clr" data-clr="orange"></div>
-            <div class="clr" data-clr="blue"></div>
-            <div class="clr" data-clr="purple"></div>
-            <div class="clr" data-clr="yellowgreen"></div>
-            <div class="clr" data-clr="yellow"></div>
-            <div class="clr" data-clr="#fff"></div>
+            <Divclass="clr" data-clr="#000"></Div>
+            <Divclass="clr" data-clr="red"></Div>
+            <Divclass="clr" data-clr="orange"></Div>
+            <Divclass="clr" data-clr="blue"></Div>
+            <Divclass="clr" data-clr="purple"></Div>
+            <Divclass="clr" data-clr="yellowgreen"></Div>
+            <Divclass="clr" data-clr="yellow"></Div>
+            <Divclass="clr" data-clr="#fff"></Div>
         
-
             <!-- Clear and Save buttons -->
-            <button class="clear">Clear</button>
-            <button class="save">Save</button>
+            <Buttonclass="clear">Clear</Button>
+            <Buttonclass="save">Save</Button>
             <!-- Color input and brush thickness input -->
-            <input type="color" id="favcolor" value="#000000" title="Pick your color">
-            <label for="brushThickness">Brush Thickness:</label>
-            <input type="range" id="brushThickness" value="5" min="1" max="20" oninput="this.nextElementSibling.value = this.value">
-            <output>5</output>
+            <Inputtype="color" id="favcolor" value="#000000" title="Pick your color">
+            <Label for="brushThickness">Brush Thickness:</Label>
+            <Inputtype="range" id="brushThickness" value="5" min="1" max="20" oninput="this.nextElementSibling.value = this.value">
+            <Output>5</Output>
             <!-- Search button -->
-            <button id="searchButton">Search</button>
-            <div class="emoji">🎨</div>
-        </div>
-        <div class="canvas-container">
-            <div class="result" id="resultText"></div>
-            <canvas id="canvas"></canvas>
-        </div>
-    </div>
+            <Buttonid="searchButton">Search</Button>
+            <Divclass="emoji">🎨</Div>
+        </Div>
+        <Divclass="canvas-container">
+            <Divclass="result" id="resultText"></Div>
+            <Canvasid="canvas"></Canvas>
+        </Div>
+    </Div>
 </body>
 </html>
